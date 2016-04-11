@@ -77,7 +77,8 @@ class NaivePaintingComponent extends JComponent {
 			g2d.setColor(new Color(randCol));
 
 			if (position == 0) {
-				drawLineZentral(randX, randY, g2d);
+				//drawLineZentral(randX, randY, g2d);
+				drawStar(500, 250, randX, randY, g2d);
 			}
 			if (position == 1) {
 				drawLineRandom(g2d);
@@ -200,6 +201,10 @@ class NaivePaintingComponent extends JComponent {
 				x = Mouse.mouseX;
 				y = Mouse.mouseY;
 			}
+	}
+	
+	public void drawStar(int centerX, int centerY, int startX, int startY, Graphics g){
+			g.drawLine(startX, startY, centerX, centerY);
 	}
 
 	public void drawLineRandom(Graphics g) {
